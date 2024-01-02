@@ -1,11 +1,23 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import styles from "./style.module.scss";
-import { motion, useAnimation } from 'framer-motion';
+import { motion, useAnimation, AnimatePresence } from 'framer-motion';
+import { useLocation } from 'react-router-dom';
+import Nav from './nav';
 
 const Navbar = () => {
     const [prevScrollPos, setPrevScrollPos] = useState(window.pageYOffset);
     const [visible, setVisible] = useState(true);
     const controls = useAnimation();
+    const [navOpen, setNavOpen] = useState(false);
+    const location = useLocation();
+
+    const toggleNavOpen = useCallback(() => {
+        setNavOpen(prevNavOpen => !prevNavOpen);
+    }, [setNavOpen]);
+
+    useEffect(() => {
+        setNavOpen(false);
+    }, [location.pathname, setNavOpen]);
 
     useEffect(() => {
         const handleScroll = () => {
@@ -47,6 +59,13 @@ const Navbar = () => {
                     <li>Contact</li>
                 </ul>
             </div>
+
+            <div className={styles.menu} onClick={toggleNavOpen}>
+                <span>menu</span>
+            </div>
+            <AnimatePresence mode='wait'>
+                {navOpen && <Nav setNavOpen={setNavOpen} />}
+            </AnimatePresence>
         </motion.nav>
     )
 }
