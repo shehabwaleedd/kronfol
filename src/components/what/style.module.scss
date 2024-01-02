@@ -28,6 +28,10 @@
             letter-spacing: normal;
             text-transform: uppercase;
             font-display: swap;
+            @media (max-width: 777px) {
+                font-size: 4.3vh;
+
+            }
         }
 
     }
@@ -49,6 +53,12 @@
             transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
             user-select: none;
             font-display: swap;
+
+            @media (max-width: 777px) {
+                width: 100%;
+                font-size: var(--normal-font-size);
+                font-weight: 100;
+            }
         }
     }
 }
