@@ -1,0 +1,75 @@
+.navbar {
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    top: 0;
+    left: 0;
+    z-index: 9;
+    height: 6.5vh;
+    width: 100%;
+    padding: 0rem 0rem;
+    overflow: hidden;
+    transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+    user-select: none;
+    border-bottom: 3px solid var(--header-color);
+    background-color: var(--background-color);
+
+
+    &__logo {
+        display: flex;
+        align-items: flex-start;
+        justify-content: flex-start;
+        padding-right: 1rem;
+        padding-left: 1rem;
+        background-color: var(--header-color);
+        h1 {
+            font-family: var(--logo-font) ;
+            font-size: 8vh;
+            color: var(--background-color);
+            letter-spacing: 0.1rem;
+            font-display: swap;
+            text-transform: uppercase;
+        }
+    }
+
+    &__links {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        width: 100%;
+
+
+        ul {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr); /* Equal width columns for squares, last column for logo */
+            list-style: none;
+            width: 100%;
+
+            li {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                height: 6.5vh;
+                transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+                cursor: pointer;
+                font-display: swap;
+                user-select: none;
+                font-family: 'Oswald', serif;
+                font-size: var(--navigaion-font-size);
+                letter-spacing: 0.1rem;
+                text-transform: uppercase;
+                color: var(--text-color);
+                border-left: 4px solid var(--header-color);
+
+                &:hover {
+                    transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+
+                    background-color: var(--header-color);
+                    color: var(--background-color);
+                }
+            }
+            
+        }
+    }
+}

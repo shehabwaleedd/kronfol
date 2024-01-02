@@ -1,0 +1,74 @@
+.grids {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+    padding: 1rem;
+    margin-top: 2rem;
+
+    &__container {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        height: 100%;
+        width: 100%;
+        grid-gap: 1rem;
+
+        @media (max-width: 768px) {
+            grid-template-columns: repeat(1, 1fr);
+        }
+
+        &__grid__image {
+            display: flex;
+            align-items: flex-start;
+            justify-content: center;
+            flex-direction: column;
+            height: 100%;
+            width: 100%;
+            overflow: hidden;
+            transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+            border: 3px solid #494949;
+            border-radius: 1rem;
+            padding: 1rem;
+            cursor: pointer;
+
+            h2 {
+                font-family: 'Oswald', serif;
+                font-size: var(--bigger-font-size);
+                color: var(--header-color);
+                font-weight: 700;
+                text-transform: uppercase;
+                letter-spacing: 0.1rem;
+            }
+
+            p {
+                font-family: 'Tiro Tamil', serif;
+                font-size: var(--normal-font-size);
+                color: var(--header-color);
+                text-transform: lowercase;
+                letter-spacing: 0.1rem;
+            }
+
+            img {
+                height: 100%;
+                width: 100%;
+                object-fit: cover;
+                border-radius: 0.5rem;
+            }
+            video {
+                height: 90%;
+                width: 100%;
+                object-fit: cover;
+                border-radius: 0.5rem;
+
+            }
+        }
+
+        &__grid__text {
+            margin-bottom: 1rem;
+        }
+    }
+
+
+}
