@@ -12,6 +12,7 @@ const Home = lazy(() => import('./pages/home/Home'));
 function App() {
   const location = useLocation();
   const smallerDimension = window.innerWidth < 1200;
+  const [navOpen, setNavOpen] = useState(false);
   const [dimension, setDimension] = useState({ width: 0, height: 0 });
 
   useEffect(() => {
@@ -71,10 +72,11 @@ function App() {
 
 
   }, [smallerDimension])
+
   return (
     <div className="App">
       <Suspense fallback={<div>Loading...</div>}>
-        <Navbar />
+        <Navbar navOpen={navOpen} setNavOpen={setNavOpen}/>
         <Home />
       </Suspense>
     </div>

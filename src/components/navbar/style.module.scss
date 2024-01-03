@@ -5,7 +5,6 @@
     justify-content: space-between;
     top: 0;
     left: 0;
-    z-index: 9;
     height: 6.5vh;
     width: 100%;
     padding: 0rem 0rem;
@@ -14,7 +13,7 @@
     user-select: none;
     border-bottom: 3px solid var(--header-color);
     background-color: var(--background-color);
-
+    z-index: 99;
 
     &__logo {
         display: flex;
@@ -23,6 +22,10 @@
         padding-right: 1rem;
         padding-left: 1rem;
         background-color: var(--header-color);
+        position: relative;
+        z-index: 10;
+        transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+
         h1 {
             font-family: var(--logo-font) ;
             font-size: 8vh;
@@ -38,6 +41,9 @@
         align-items: center;
         justify-content: flex-end;
         width: 100%;
+        transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+        position: relative;
+
         @media (max-width: 768px) {
             display: none;
         }

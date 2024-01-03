@@ -27,6 +27,19 @@ export const height = {
         transition
     }
 }
+export const contactPageHeight = {
+    initial: {
+        height: 0
+    },
+    enter: {
+        height: "75vh",
+        transition
+    },
+    exit: {
+        height: 0,
+        transition
+    }
+}
 
 export const background = {
     initial: {
@@ -63,16 +76,13 @@ export const blur = {
 export const translate = {
     initial: {
         y: "100%",
-        opacity: 0
     },
     enter: (i) => ({
         y: 0,
-        opacity: 1,
         transition: { duration: 1, ease: [0.76, 0, 0.24, 1], delay: i[0] }
     }),
     exit: (i) => ({
         y: "100%",
-        opacity: 0,
         transition: { duration: 0.7, ease: [0.76, 0, 0.24, 1], delay: i[1] }
     })
 }

@@ -1,0 +1,19 @@
+.getChars {
+    display: flex;
+    overflow: hidden;
+    user-select: none;
+
+    h2 {
+        font-family: var(--logo-font);
+        color: var(--header-color);
+        font-size: 20.8vw;
+        letter-spacing: 0.1rem;
+        text-transform: uppercase;
+        font-display: swap;
+        position: relative;
+        @media (max-width: 456px) {
+            line-height: 0.88;
+            font-size: 3.5vh;
+        }
+    }
+}

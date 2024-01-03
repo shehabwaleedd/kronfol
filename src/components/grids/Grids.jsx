@@ -1,6 +1,5 @@
 import React from 'react'
 import styles from "./style.module.scss"
-import image1 from "../../assets/52_hoffman-lane-2045__05242021.jpeg"
 import image2 from "../../assets/ycbj1gyndaz4nwrs12ww.webp"
 import gridV1 from "../../assets/gridV1.mp4"
 
