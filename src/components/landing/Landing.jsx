@@ -1,19 +1,26 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useRef } from 'react';
 import styles from "./style.module.scss"
 import mainVideo from "../../assets/mainVideo.webm"
 import posterImage from "../../assets/poster.webp"
 import getChars from '../../animations/animatedHeaders/getChars.tsx';
+import { motion, useScroll, useTransform } from 'framer-motion';
 
 const Landing = () => {
-    const videoRef = useRef(null);
+    const background = useRef(null);
 
-    useEffect(() => {
-        window.addEventListener('load', () => {
-            if (videoRef.current) {
-                videoRef.current.play();
-            }
-        });
-    }, []);
+    // Use the useScroll hook to get the scroll progress
+    const { scrollYProgress } = useScroll({
+        target: background,
+        offset: ["start end", "end end"]
+    });
+
+    // Transform the scroll progress into a clipPath value
+    const clipPath = useTransform(
+        scrollYProgress,
+        [0, 1],
+        [`inset(5%)`, `inset(0%)`]
+    );
+
     return (
         <section className={styles.landing}>
             <div className={styles.landing__top}>
@@ -25,11 +32,15 @@ const Landing = () => {
                     <span>Sursock Tower, Ashrafieh ✹ Beirut, Lebanon</span>
                 </div>
             </div>
-            <div className={styles.landingBottom}>
-                <video ref={videoRef} loop muted poster={posterImage} loading="lazy">
+            <motion.div className={styles.landingBottom} ref={background}>
+                <motion.video
+                    style={{ clipPath }}
+                    autoPlay
+                    playsInline
+                    loop muted poster={posterImage} loading="lazy">
                     <source src={mainVideo} type="video/webm" />
-                </video>
-            </div>
+                </motion.video>
+            </motion.div>
         </section>
     )
 }

@@ -1,0 +1,170 @@
+.footer {
+    background-color: var(--header-color);
+    color: var(--background-color);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 2rem;
+    padding: 1rem;
+    position: relative;
+    height: 100%;
+    width: 100%;
+    position: relative;
+    z-index: 9;
+    h3 {
+        font-size: 24.1vw;
+        font-family: 'Oswald';
+        color: var(--background-color);
+        letter-spacing: 1rem;
+        text-transform: uppercase;
+
+        @media (max-width: 1265px) {
+            font-size: 7vw;
+        }
+        span {
+            font-size: 3rem;
+            position: absolute;
+            top: 10rem;
+            right: 1rem;
+
+            @media (max-width: 1265px) {
+                display: none;
+            }
+        }
+    }
+    h2 {
+        font-family: "Oswald";
+        text-transform: uppercase;
+        width: 60%;
+
+    }
+    &__container {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        width: 100%;
+        gap: 2rem;
+        @media (max-width: 1265px) {
+            grid-template-columns: repeat(1, 1fr);
+        }
+        h2 {
+            font-size: var(--bigger-font-size);
+            font-family: var(--header-font);
+            font-weight: 400;
+            color: var(--background-color);
+            text-transform: uppercase;
+            letter-spacing: 0.1rem;
+            @media (max-width: 1265px) {
+                font-size: 3.5vh;
+            }
+        }
+        address {
+            font-size: var(--big-font-size);
+            font-family: 'Oswald';
+            color: var(--background-color);
+            letter-spacing: 0.1rem;
+            text-transform: uppercase;
+            font-weight: 400;
+            line-height: 1;
+            font-display: swap;
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+            @media (max-width: 1265px) {
+                font-size: 3.5vh;
+            }
+        }
+        a {
+            font-size: var(--big-font-size);
+            font-family: 'Oswald';
+            color: var(--background-color);
+            letter-spacing: 0.1rem;
+            text-transform: uppercase;
+            font-weight: 400;
+            line-height: 1;
+            font-display: swap;
+            @media (max-width: 1265px) {
+                font-size: 3.5vh;
+            }
+        }
+    }
+
+    &__footer {
+        display: flex;
+        width: 100%;
+        border-top: 3px solid var(--background-color);
+        justify-content: space-between;
+        position: relative;
+        align-items: flex-start;
+        padding-top: 1rem;
+        h2 {
+            font-size: var(--normal-font-size);
+            width: 100%;
+        }
+        ul {
+            display: flex;
+            width: 100%;
+            gap: 2rem;
+            li {
+                display: flex;
+                width: 100%;
+                a, span {
+                    font-size: var(--normal-font-size);
+                    font-family: 'Oswald';
+                    color: var(--background-color);
+                    letter-spacing: 0.1rem;
+                    text-transform: uppercase;
+                    font-weight: 400;
+                    line-height: 1;
+                    font-display: swap;
+                    @media (max-width: 1265px) {
+                        font-size: 3.5vh;
+                    }
+                }
+            }
+        }
+        .credits {
+            display: flex;
+            width: 100%;
+            justify-content: flex-end;
+            align-items: flex-start;
+            gap: 1rem;
+            font-size: var(--normal-font-size);
+            font-family: 'Oswald';
+            color: var(--background-color);
+            letter-spacing: 0.1rem;
+            text-transform: uppercase;
+            font-weight: 400;
+            line-height: 1;
+            height: 100%;
+            font-display: swap;
+
+            &__container {
+                display: flex;
+                width: 100%;
+                justify-content: flex-end;
+                align-items: flex-start;
+                gap: 1rem;
+                font-size: var(--normal-font-size);
+                font-family: 'Oswald';
+                color: var(--background-color);
+                letter-spacing: 0.1rem;
+                text-transform: uppercase;
+                font-weight: 400;
+                line-height: 1;
+                height: 100%;
+                font-display: swap;
+                ul {
+                    width: 100%;
+                    li {
+                        display: flex;
+                        width: 100%;
+                    }
+                }
+
+            }
+        }
+    }
+    
+
+}

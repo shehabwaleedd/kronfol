@@ -6,6 +6,7 @@ import { useLocation } from 'react-router-dom';
 
 
 import './App.css';
+import Footer from './components/footer/Footer';
 const Navbar = lazy(() => import('./components/navbar/Navbar'));
 const Home = lazy(() => import('./pages/home/Home'));
 
@@ -75,10 +76,11 @@ function App() {
 
   return (
     <div className="App">
+      <Navbar navOpen={navOpen} setNavOpen={setNavOpen} />
       <Suspense fallback={<div>Loading...</div>}>
-        <Navbar navOpen={navOpen} setNavOpen={setNavOpen}/>
         <Home />
       </Suspense>
+      <Footer />
     </div>
   );
 }
