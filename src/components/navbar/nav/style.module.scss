@@ -16,7 +16,7 @@
         position: absolute;
         right: 3rem;
         top: 2rem;
-        font-family: "Oswald";
+        font-family: var(--body-font);
         cursor: pointer;
 
         @media (max-width: 468px) {

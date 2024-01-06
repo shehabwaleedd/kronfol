@@ -11,7 +11,7 @@
     position: relative;
     z-index: 9;
     margin-top: 10vh;
-    
+
 
     h3 {
         font-size: 24.1vw;
@@ -21,7 +21,7 @@
         text-transform: uppercase;
 
         @media (max-width: 1265px) {
-            font-size: 7vw;
+            font-size: 12vh;
         }
 
         span {
@@ -92,6 +92,10 @@
         position: relative;
         top: -2rem;
 
+        @media (max-width: 1265px) {
+            flex-direction: column-reverse;
+        }
+
         h2 {
             font-size: var(--normal-font-size);
             width: 100%;
@@ -140,6 +144,10 @@
             line-height: 1;
             height: 100%;
             font-display: swap;
+
+            @media (max-width: 1265px) {
+                display: none;
+            }
 
             &__container {
                 display: flex;
@@ -193,10 +201,54 @@
     width: 20%;
     justify-content: flex-start;
     align-items: flex-start;
-    span {
+
+    @media (max-width: 1265px) {
+        width: 100%;
+        margin-top: 4vh;
+    }
+
+    a {
         width: 100%;
         font-family: var(--body-font);
         font-weight: 500;
         text-transform: uppercase;
+        color: var(--header-color);
     }
+}
+
+.footer__rest {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    width: 80%;
+    gap: 1rem;
+
+    @media (max-width: 1265px) {
+        ul {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: flex-start;
+            gap: 1rem;
+            width: 100%;
+
+            li {
+                display: flex;
+                justify-content: flex-start;
+                align-items: flex-start;
+                gap: 1rem;
+                width: 100%;
+                a {
+                    width: 100%;
+                    font-size: var(--body-font-size);
+                }
+                span {
+                    width: 100%;
+                    font-size: var(--body-font-size);
+                }
+            }
+        }
+    }
+
 }

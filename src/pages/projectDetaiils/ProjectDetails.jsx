@@ -23,9 +23,8 @@ const ProjectDetails = () => {
 
     // Customized animation variants for sliding
     const variants = {
-        enter: { scale: 0.98 },
-        center: { scale: 1 },
-        exit: { scale: 1.02 },
+        enter: { x: 1 },
+        exit: { x: 1 },
     };
 
     // Determine the swipe direction
@@ -41,7 +40,7 @@ const ProjectDetails = () => {
             <div className={styles.projectDetails_bottom}>
                 <img src={project.projectImage} alt="" />
                 {project.details.map((detail, index) => (
-                    <div className={styles.projectDetails_bottom_content_container}>
+                    <div className={styles.projectDetails_bottom_content_container} key={index}>
                         <div className={styles.projectDetails_bottom_content_left}>
                             <h2>{detail.text}</h2>
                         </div>
@@ -79,7 +78,7 @@ const ProjectDetails = () => {
                     <h2>Location</h2>
                     <p>{project.location}</p>
                 </div>
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2484.2691323055337!2d-0.15825002341086397!3d51.489928511979556!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x48760516dfd75ce1%3A0xfa3b801f98569d43!2s88-GALLERY!5e0!3m2!1sen!2seg!4v1704477267722!5m2!1sen!2seg" width="800" height="600" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title='map'></iframe>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2484.2691323055337!2d-0.15825002341086397!3d51.489928511979556!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x48760516dfd75ce1%3A0xfa3b801f98569d43!2s88-GALLERY!5e0!3m2!1sen!2seg!4v1704477267722!5m2!1sen!2seg" width="800" height="600" loading="lazy" referrerPolicy="no-referrer-when-downgrade" title='map'></iframe>
             </div>
         </main>
     )

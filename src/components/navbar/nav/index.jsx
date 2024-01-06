@@ -10,12 +10,16 @@ const links = [
     href: "/",
   },
   {
-    title: "Projects",
+    title: "Approach",
     href: "/projects",
   },
   {
-    title: "About",
-    href: "/about",
+    title: "Vision",
+    href: "/vision",
+  },
+  {
+    title: "Projects",
+    href: "/projects",
   },
   {
     title: "Contact",
@@ -39,7 +43,7 @@ export default function Index({ setNavOpen }) {
           X
         </div>
         <div className={styles.container}>
-          <Body links={links}/>
+          <Body links={links} />
           <Footer />
         </div>
       </div>

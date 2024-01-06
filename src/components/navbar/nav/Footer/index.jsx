@@ -13,14 +13,14 @@ export default function Footer() {
                     variants={translate} initial="initial"
                     animate="enter"
                     exit="exit">
-                    <span>KRONFOL - </span> REAL ESTATE Company
+                    <span>KRONFOL - </span> Real Estate Company.
                 </motion.li>
                 <motion.li
                     custom={[0.3, 0]}
                     variants={translate} initial="initial"
                     animate="enter"
                     exit="exit">
-                    <span>Location: </span> Beirut, Lebanon
+                    <span>Location: </span> Beirut, Lebanon.
                 </motion.li>
                 <motion.li
                     custom={[0.3, 0]}

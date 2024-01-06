@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef } from 'react'
 import styles from "./style.module.scss"
 import { AnimatePresence, motion } from 'framer-motion'
 import { gsap } from 'gsap';
+import { Link } from 'react-router-dom';
 
 const Footer = () => {
     const [creditsOpened, setCreditsOpened] = useState(false)
@@ -22,11 +23,11 @@ const Footer = () => {
             <div className={styles.footer__footer}>
                 <div className={styles.footer__logoz} onClick={toggleCredits}>
                     <h2>©2024 Kronfol</h2>
-                    <span>By Cairo Studio</span>
+                    <Link to="https://cairo-studio.com">By Cairo Studio</Link>
 
                 </div>
-                <div className="footer__rest">
-                    <ul className="foso__content">
+                <div className={styles.footer__rest}>
+                    <ul className={styles.foso__content}>
                         <li onClick={toggleCredits}>
                             <span>
                                 Credits

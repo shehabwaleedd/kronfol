@@ -31,6 +31,7 @@
         justify-content: flex-start;
         align-items: flex-start;
         width: 100%;
+        
 
         img {
             width: 100%;
@@ -90,6 +91,15 @@
             margin-top: 5vh;
             border-top: 1px solid #c0c0c0;
             padding-top: 5vh;
+            position: relative;
+            z-index: 9;
+            min-height: 100vh;
+            @media (max-width: 1256px) {
+                min-height: 65vh;
+            }
+            @media (max-width: 456px) {
+                min-height: 50vh;
+            }
             h2 {
                 font-size: var(--bigger-font-size);
                 font-weight: 400;

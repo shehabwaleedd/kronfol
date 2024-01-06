@@ -101,6 +101,7 @@ function App() {
           ease: "power3.out",
           zIndex: 99,
           paddingLeft: window.innerWidth < 1200 ? "1rem" : "0",
+          width: location.pathname === "/" ? "auto" : "100%",
         });
 
         // Create or update the ScrollTrigger animation
@@ -135,7 +136,7 @@ function App() {
           ease: "power3.out",
           zIndex: 99,
           paddingLeft: window.innerWidth < 1200 ? "1rem" : "1rem",
-          width: location.pathname === "/" ? "" : "autos",
+          width: location.pathname === "/" ? "100%" : "100%",
         });
         return () => {
           window.removeEventListener('resize', updateAnimation);
