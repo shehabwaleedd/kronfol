@@ -6,7 +6,6 @@
     left: 0;
     flex-direction: column;
     transition: all 1s cubic-bezier(0.16, 1, 0.3, 1);
-    border-bottom: 3px solid var(--header-color);
     overflow: hidden;
 
     @media (max-width: 777px) {
@@ -22,6 +21,7 @@
         height: 100%;
         transition: all 1s cubic-bezier(0.16, 1, 0.3, 1);
         overflow: hidden;
+        margin-top: 50vh;
 
         &_display {
             display: flex;
@@ -49,11 +49,12 @@
             }
 
             span {
-                font-family: 'Tiro Tamil', serif;
-                font-size: 0.8rem;
-                letter-spacing: 0.05rem;
+                font-family: var(--body-font);
                 text-transform: lowercase;
+                font-size: var(--body-font-size);
+                letter-spacing: -0.05rem;
                 color: var(--text-color);
+                font-weight: 200;
                 padding: 0 1rem;
                 transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
                 user-select: none;

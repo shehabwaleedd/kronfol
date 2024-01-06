@@ -9,20 +9,20 @@
 
     h2 {
         font-size: var(--bigger-font-size);
-        font-family: var(--header-font);
-        font-weight: 400;
+        font-weight: 500;
         color: var(--background-color);
-        text-transform: uppercase;
+        font-family: var(--body-font);
+        text-transform: lowercase;
         letter-spacing: 0.1rem;
     }
 
     p {
         font-size: var(--big-font-size);
-        font-family: "Oswald";
+        font-family: var(--body-font);
+        text-transform: lowercase;
         font-weight: 400;
         color: var(--background-color);
-        text-transform: lowercase;
-        letter-spacing: 0.1rem;
+        letter-spacing: -0.05rem;
     }
 
     .visitUs {
@@ -57,8 +57,8 @@
         a {
             color: var(--background-color);
             font-size: var(--big-font-size);
-            font-family: "Oswald";
-            text-transform: uppercase;
+            font-family: var(--body-font);
+            text-transform: lowercase;
             transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
 
         }

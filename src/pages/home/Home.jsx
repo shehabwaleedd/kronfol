@@ -1,16 +1,21 @@
 import React from 'react'
 import Landing from '../../components/landing/Landing'
-import What from '../../components/what/What'
-import Grids from '../../components/grids/Grids'
-import Stats from '../../components/stats/Stats'
+import Story from '../../components/story/Story'
+import Who from '../../components/who/Who'
+import OurProjects from '../../components/ourProjects/OurProjects'
+import Always from '../../components/always/Always'
+import Statemenet from '../../components/statement/Statemenet'
 
-const Home = () => {
+const Home = ({ landingRef }) => {
     return (
         <main>
-            <Landing />
-            <What />
-            <Stats />
-            <Grids />
+            <Landing landingRef={ landingRef } />
+            <Story />
+            <Who />
+            <OurProjects />
+            <Statemenet />
+            <Always />
+
         </main>
     )
 }

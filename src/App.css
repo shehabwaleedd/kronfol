@@ -1,28 +1,31 @@
 @import url("https://api.fontshare.com/v2/css?f[]=switzer@900,100,700,400,200,300,500&display=swap");
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,300;0,500;0,600;0,700;1,200;1,400;1,500;1,600&family=Tiro+Tamil:ital@1&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,400;1,500;1,600&family=Tiro+Tamil:ital@1&display=swap');
 @import url('https://api.fontshare.com/v2/css?f[]=oswald@600,700,500,300,200,400&display=swap');
 
 :root {
   --header-color: #1b1b1b;
   --sub-header-color: #3fff;
-  --accent-color: #3A7575;
-  --background-color: #f3f0e9;
+  --accent-color: #ff4b26;
+  --background-color: #fff;
   --color-number: #999;
+  --text-color: #646464;
+  --border-color: #eaeaea;
 
   /* Font sizes based on the golden ratio */
 
   --normal-font-size: 1rem;
   --small-font-size: 0.618rem;
+  --body-font-size: 1.236rem;
   --big-font-size: 1.618rem;
   --bigger-font-size: 2.618rem;
   --biggest-font-size: 4.236rem;
   --navigaion-font-size: 5.9vh;
 
-  
+
 
   /* Font families */
 
-  --body-font: "Tiro Tamil";
+  --body-font: "Poppins";
   --header-font: "Switzer-Bold";
   --sub-header-font: "Switzer Medium";
   --title-font: "Switzer Regular";
@@ -133,6 +136,8 @@ img {
 }
 
 
+
+
 ::-webkit-scrollbar {
   display: none;
 }
@@ -206,4 +211,3 @@ html.lenis {
 }
 
 /* Responsive Font sizes based on golden ratio */
-

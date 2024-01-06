@@ -1,0 +1,25 @@
+.getChars {
+    display: flex;
+    overflow: hidden;
+    user-select: none;
+;
+    p {
+        font-family: var(--body-font);
+        font-size: var(--bigger-font-size);
+        letter-spacing: -0.05rem;
+        font-weight: 300;
+        width: 100%;
+        color: var(--header-color);
+        transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+        user-select: none;
+        line-height: 1;
+        font-display: swap;
+        overflow: hidden;
+
+        @media (max-width: 777px) {
+            width: 100%;
+            font-size: var(--normal-font-size);
+            font-weight: 100;
+        }
+    }
+}

@@ -1,0 +1,85 @@
+.homeProjects {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: sticky;
+    top: 0px;
+
+    .card {
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        top: -5%;
+        height: 700px;
+        width: 1500px;
+        border-radius: 25px;
+        padding: 50px;
+        transform-origin: top;
+        border: 3px solid var(--header-color);
+
+        h2 {
+            text-align: left;
+            margin: 0px;
+            font-size: 3rem;
+            color: var(--header-color);
+            font-family: 'Oswald';
+            font-weight: 500;
+            text-transform: uppercase;
+        }
+
+        .body {
+            display: flex;
+            height: 100%;
+            margin-top: 50px;
+            gap: 50px;
+            align-items: flex-start;
+            justify-content: flex-start;
+
+            .description {
+                width: 70%;
+                display: flex;
+                flex-direction: column;
+                justify-content: flex-start;
+                align-items: flex-start;
+                position: relative;
+                top: 10%;
+                gap: 1rem;
+
+                p {
+
+                    font-size: var(--body-font-size);
+                    color: var(--header-color);
+                    font-family: var(--body-font);
+                }
+
+                span {
+                    a {
+                        font-family: 'Oswald';
+                        font-size: var(--body-font-size);
+                        text-decoration: none;
+                        color: var(--header-color);
+                        cursor: pointer;
+                    }
+                }
+            }
+
+            .imageContainer {
+                position: relative;
+                width: 60%;
+                height: 100%;
+                overflow: hidden;
+
+                .inner {
+                    width: 100%;
+                    height: 100%;
+                }
+
+                img {
+                    border-radius: 25px;
+                    object-fit: cover;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,33 @@
+.statement {
+    display: flex;
+    flex-direction: column;
+
+    padding: 2rem;
+    gap: 1rem;
+    height: 100%;
+    width: 100%;
+    padding-top: 10vh;
+    padding-bottom: 10vh;
+    p {
+        font-family: var(--body-font);
+        font-size: 3.58rem;
+        letter-spacing: -0.05rem;
+        font-weight: 300;
+        width: 60%;
+        color: var(--text-color);
+        transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+        line-height: 1;
+        font-display: swap;
+        overflow: hidden;
+
+        @media (max-width: 777px) {
+            width: 100%;
+            font-size: var(--normal-font-size);
+            font-weight: 100;
+        }
+    }
+    span {
+        color: var(--accent-color);
+        opacity: 0.9;
+    }
+}

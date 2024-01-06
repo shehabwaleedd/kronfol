@@ -1,20 +1,20 @@
 import React from 'react'
-import { translate } from "../../navbar/anim";
+import { translate } from "../../components/navbar/anim";
 import { motion } from "framer-motion"
-import styles from './AnimatedSubHeaders.module.scss'
+import styles from './style.module.scss'
 
 
 const AnimatedSubHeaders = (word) => {
     return (
         <div className={styles.getChars}>
-            <motion.span
+            <motion.p
                 custom={1}
                 variants={translate}
                 initial="initial"
                 animate="enter"
                 exit="exit">
                 {word}
-            </motion.span>
+            </motion.p>
         </div>
     )
 }

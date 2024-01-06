@@ -1,8 +1,11 @@
-import React, { Suspense, lazy } from 'react';
+import React, { Suspense, lazy, useRef } from 'react';
+import Routers from './routes/Routers';
+import { Route, Routes } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import Lenis from '@studio-freight/lenis'
 import { useLocation } from 'react-router-dom';
-
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 
 import './App.css';
@@ -15,7 +18,8 @@ function App() {
   const smallerDimension = window.innerWidth < 1200;
   const [navOpen, setNavOpen] = useState(false);
   const [dimension, setDimension] = useState({ width: 0, height: 0 });
-
+  const landingRef = useRef(null); // Ref for the landing section
+  const logoRef = useRef(null); // Ref f
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   }, [location.pathname]);
@@ -41,14 +45,14 @@ function App() {
       const lenis = new Lenis({
         el: document.querySelector('[data-scroll-container]'),
         touchDirection: "vertical",
-        duration: 1.7,
+        duration: 2.7,
         easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
         infinite: false,
         lerp: 0.1,
         direction: "vertical",
         gestureDirection: "vertical",
         smooth: true,
-        smoothTouch: false,
+        smoothTouch: true,
         smoothWheel: true,
         touchMultiplier: 2,
         autoResize: true,
@@ -74,12 +78,88 @@ function App() {
 
   }, [smallerDimension])
 
+  useEffect(() => {
+    gsap.registerPlugin(ScrollTrigger);
+
+    const updateAnimation = () => {
+      if (location.pathname === "/") {
+        const vw = window.innerWidth;
+        const vh = window.innerHeight;
+        const isMobile = vw < 768; // Adjust as per your mobile breakpoint
+
+        // Set initial scale and position based on viewport size
+        const initialScale = isMobile ? 1.7 : 7; // Smaller scale for mobile
+        const initialYPercent = isMobile ? -600 : -450; // Adjust for mobile
+
+        gsap.set(logoRef.current, {
+          scale: initialScale,
+          yPercent: initialYPercent,
+          y: "50vh",
+          xPercent: -50,
+          x: "50vw",
+          position: 'fixed',
+          ease: "power3.out",
+          zIndex: 99,
+          paddingLeft: window.innerWidth < 1200 ? "1rem" : "0",
+        });
+
+        // Create or update the ScrollTrigger animation
+        const logoAnimation = gsap.to(logoRef.current, {
+          scale: 1,
+          top: "0", // Adjust for mobile
+          left: "0.5rem", // Adjust for mobile
+          xPercent: 0,
+          yPercent: 0,
+          x: 0,
+          y: 0,
+          ease: "power3.out",
+          duration: 0.5,
+          zIndex: 99,
+          scrollTrigger: {
+            trigger: landingRef.current,
+            start: "top top",
+            end: "bottom center",
+            scrub: true,
+          }
+        });
+
+        return () => logoAnimation.kill();
+      } else {
+        gsap.set(logoRef.current, {
+          scale: 1,
+          yPercent: 0,
+          y: "0vh",
+          xPercent: 1,
+          x: "0vw",
+          position: 'relative',
+          ease: "power3.out",
+          zIndex: 99,
+          paddingLeft: window.innerWidth < 1200 ? "1rem" : "1rem",
+          width: location.pathname === "/" ? "" : "autos",
+        });
+        return () => {
+          window.removeEventListener('resize', updateAnimation);
+          ScrollTrigger.getAll().forEach(trigger => trigger.kill());
+        };
+      }
+    };
+
+    updateAnimation();
+    window.addEventListener('resize', updateAnimation);
+
+    return () => {
+      window.removeEventListener('resize', updateAnimation);
+      ScrollTrigger.getAll().forEach(trigger => trigger.kill());
+    };
+  }, [location.pathname]);
+
+
   return (
     <div className="App">
-      <Navbar navOpen={navOpen} setNavOpen={setNavOpen} />
-      <Suspense fallback={<div>Loading...</div>}>
-        <Home />
-      </Suspense>
+      <Navbar navOpen={navOpen} setNavOpen={setNavOpen} logoRef={logoRef} />
+      <Routes location={location} key={location.pathname}>
+        <Route path='/*' element={<Routers landingRef={landingRef} />} />
+      </Routes>
       <Footer />
     </div>
   );

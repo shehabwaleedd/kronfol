@@ -2,10 +2,9 @@ import React, { useRef } from 'react';
 import styles from "./style.module.scss"
 import mainVideo from "../../assets/mainVideo.webm"
 import posterImage from "../../assets/poster.webp"
-import getChars from '../../animations/animatedHeaders/getChars.tsx';
 import { motion, useScroll, useTransform } from 'framer-motion';
 
-const Landing = () => {
+const Landing = ({ landingRef }) => {
     const background = useRef(null);
 
     // Use the useScroll hook to get the scroll progress
@@ -22,11 +21,8 @@ const Landing = () => {
     );
 
     return (
-        <section className={styles.landing}>
+        <section className={styles.landing} ref={landingRef}>
             <div className={styles.landing__top}>
-                <div className={styles.landing__top_display}>
-                    {getChars('Kronfol')}
-                </div>
                 <div className={styles.landing__top_bottom}>
                     <span> Luxrious Homes for Exclusive Tastes <br /> In Lebanon </span>
                     <span>Sursock Tower, Ashrafieh ✹ Beirut, Lebanon</span>
