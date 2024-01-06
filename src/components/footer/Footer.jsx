@@ -10,11 +10,6 @@ const Footer = () => {
     const toggleCredits = () => {
         setCreditsOpened(!creditsOpened);
     }
-
-    useEffect(() => {
-        const tl = gsap.timeline({ repeat: -1 });
-        tl.to(marqueeRef.current, { x: '-100%', duration: 60, ease: 'easeOut' });
-    }, []);
     return (
         <footer className={styles.footer}>
             <div className={styles.footer__top}>

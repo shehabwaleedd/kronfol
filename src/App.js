@@ -83,32 +83,24 @@ function App() {
 
     const updateAnimation = () => {
       if (location.pathname === "/") {
-        const vw = window.innerWidth;
-        const vh = window.innerHeight;
-        const isMobile = vw < 768; // Adjust as per your mobile breakpoint
-
-        // Set initial scale and position based on viewport size
-        const initialScale = isMobile ? 1.7 : 7; // Smaller scale for mobile
-        const initialYPercent = isMobile ? -600 : -450; // Adjust for mobile
-
+        const isMobile = window.innerWidth < 968;
+        const initialYPercent = isMobile ? 200 : -450; // Adjust for mobile
+        
         gsap.set(logoRef.current, {
-          scale: initialScale,
+          scale: isMobile ? 1.8 : 7,
           yPercent: initialYPercent,
-          y: "50vh",
-          xPercent: window.innerWidth > 1200 ? -50 : -55,
+          y: isMobile ? "0" : "50vh",
+          xPercent: isMobile ? -50 : -65,
           x: "50vw",
           position: 'fixed',
           ease: "power3.out",
           zIndex: 99,
-          paddingLeft: window.innerWidth < 1200 ? "1rem" : "0",
-          width: location.pathname === "/" ? "auto" : "100%",
+          width: location.pathname === "/" ? "" : "100%",
         });
-
-        // Create or update the ScrollTrigger animation
         const logoAnimation = gsap.to(logoRef.current, {
           scale: 1,
           top: "0", // Adjust for mobile
-          left: window.innerWidth < 1200 ? "0.5rem" : "0rem", // Adjust for mobile
+          left: isMobile ? "0.5rem" : "0rem", // Adjust for mobile
           xPercent: 0,
           yPercent: 0,
           x: 0,
@@ -116,7 +108,6 @@ function App() {
           ease: "power3.out",
           duration: 0.5,
           zIndex: 99,
-          paddingLeft: window.innerWidth > 1200 ? "1rem" : "0",
           scrollTrigger: {
             trigger: landingRef.current,
             start: "top top",
@@ -136,7 +127,7 @@ function App() {
           position: 'relative',
           ease: "power3.out",
           zIndex: 99,
-          paddingLeft: "1rem",
+          paddingLeft: window.innerWidth < 1200 ? "1rem" : "1rem",
           width: location.pathname === "/" ? "100%" : "100%",
         });
         return () => {

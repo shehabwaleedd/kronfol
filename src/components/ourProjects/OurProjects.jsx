@@ -45,7 +45,7 @@ const OurProjects = () => {
                         onMouseLeave={isDesktop ? () => setHoveredProjectIndex(null) : null}
                         key={index}
                     >
-                        <Link to={`/project/${project.projectName}`}>
+                        <Link to={`/projects/${project.projectName}`}>
                             <div className={styles.ourProjects__bottom_container_image}>
                                 <motion.img
                                     className={index % 2 === 0 ? styles.story__right_images__container__image_left : styles.story__right_images__container__image_top_right}

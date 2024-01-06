@@ -21,7 +21,7 @@
         text-transform: uppercase;
 
         @media (max-width: 1265px) {
-            font-size: 12vh;
+            display: none;
         }
 
         span {
