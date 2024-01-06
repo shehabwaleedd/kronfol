@@ -20,6 +20,11 @@
             align-items: flex-end;
             width: 50%;
 
+            @media (max-width: 1277px) {
+                width: 100%;
+            }
+        
+
             h2 {
                 font-family: var(--body-font);
                 font-size: 6rem;
@@ -29,8 +34,9 @@
                 text-transform: capitalize;
                 font-display: swap;
 
-                @media (max-width: 777px) {
+                @media (max-width: 1277px) {
                     font-size: 4.3vh;
+                    padding: 1rem;
                 }
             }
         }
@@ -45,8 +51,9 @@
             position: relative;
             right: 4rem;
 
-            @media (max-width: 777px) {
-                padding: 0.5rem;
+            @media (max-width: 1277px) {
+
+                right: 0;
             }
 
             p {
@@ -64,8 +71,8 @@
 
                 @media (max-width: 777px) {
                     width: 100%;
-                    font-size: var(--normal-font-size);
-                    font-weight: 100;
+                    font-size: var(--big-font-size);
+                    font-weight: 300;
                 }
             }
         }
@@ -81,6 +88,10 @@
         position: relative;
         z-index: 1;
         top: 5rem;
+
+        @media (max-width: 1277px) {
+            grid-template-columns: repeat(1, 1fr);
+        }
 
         img {
             width: 100%;

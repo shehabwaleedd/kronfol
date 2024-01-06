@@ -8,6 +8,12 @@
     margin-top: 5rem;
     margin-bottom: 5rem;
 
+    @media (max-width: 1277px) {
+        grid-template-columns: 1fr;
+    }
+
+
+
     &__left {
         display: flex;
         flex-direction: column;
@@ -66,7 +72,7 @@
             letter-spacing: -0.05rem;
             font-weight: 300;
             width: 100%;
-            color: var(--text-color);
+            color: var(--header-color);
             transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
             line-height: 1;
             font-display: swap;
@@ -74,8 +80,8 @@
 
             @media (max-width: 777px) {
                 width: 100%;
-                font-size: var(--normal-font-size);
-                font-weight: 100;
+                font-size: var(--big-font-size);
+                font-weight: 300;
             }
         }
 
@@ -101,19 +107,38 @@
                 width: 100%;
                 height: 100%; // Make sure the container takes up the full height
 
+                @media (max-width: 1277px) {
+                    grid-template-columns: 1fr; // Left column is twice as wide as the right one
+                }
+
                 &__image_left {
                     grid-column: 1;
                     grid-row: 1 / span 2; // Image on the left spans both rows
+
+                    @media (max-width: 1277px) {
+                        grid-column: 1;
+                        grid-row: 1; // Image on the left spans both rows
+                    }
                 }
 
                 &__image_top_right {
                     grid-column: 2;
                     grid-row: 2; // Image on the top right
+
+                    @media (max-width: 1277px) {
+                        grid-column: 1;
+                        grid-row: 2; // Image on the top right
+                    }
                 }
 
                 &__image_bottom_right {
                     grid-column: 3;
                     grid-row: 1; // Image on the bottom right
+
+                    @media (max-width: 1277px) {
+                        grid-column: 1;
+                        grid-row: 3; // Image on the bottom right
+                    }
                 }
             }
         }

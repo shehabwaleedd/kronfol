@@ -8,6 +8,9 @@
     width: 100%;
     padding-top: 10vh;
     padding-bottom: 10vh;
+    @media (max-width: 777px) {
+        padding: 1rem;
+    }
     p {
         font-family: var(--body-font);
         font-size: 3.58rem;
@@ -22,8 +25,8 @@
 
         @media (max-width: 777px) {
             width: 100%;
-            font-size: var(--normal-font-size);
-            font-weight: 100;
+            font-size: var(--big-font-size);
+            font-weight: 300;
         }
     }
     span {

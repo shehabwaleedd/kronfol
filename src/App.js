@@ -95,7 +95,7 @@ function App() {
           scale: initialScale,
           yPercent: initialYPercent,
           y: "50vh",
-          xPercent: -50,
+          xPercent: window.innerWidth > 1200 ? -50 : -55,
           x: "50vw",
           position: 'fixed',
           ease: "power3.out",
@@ -108,7 +108,7 @@ function App() {
         const logoAnimation = gsap.to(logoRef.current, {
           scale: 1,
           top: "0", // Adjust for mobile
-          left: "0.5rem", // Adjust for mobile
+          left: window.innerWidth < 1200 ? "0.5rem" : "0rem", // Adjust for mobile
           xPercent: 0,
           yPercent: 0,
           x: 0,
@@ -116,6 +116,7 @@ function App() {
           ease: "power3.out",
           duration: 0.5,
           zIndex: 99,
+          paddingLeft: window.innerWidth > 1200 ? "1rem" : "0",
           scrollTrigger: {
             trigger: landingRef.current,
             start: "top top",
@@ -135,7 +136,7 @@ function App() {
           position: 'relative',
           ease: "power3.out",
           zIndex: 99,
-          paddingLeft: window.innerWidth < 1200 ? "1rem" : "1rem",
+          paddingLeft: "1rem",
           width: location.pathname === "/" ? "100%" : "100%",
         });
         return () => {
