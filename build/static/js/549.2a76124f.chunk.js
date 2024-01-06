@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkkoronfol=self.webpackChunkkoronfol||[]).push([[549],{1549:(o,e,n)=>{n.r(e),n.d(e,{default:()=>k});n(2791);var s=n(184);const k=()=>(0,s.jsx)("div",{children:"NotFound"})}}]);
+//# sourceMappingURL=549.2a76124f.chunk.js.map
