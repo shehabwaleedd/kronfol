@@ -1,9 +1,9 @@
 {
   "files": {
-    "main.css": "/static/css/main.b817387e.css",
-    "main.js": "/static/js/main.9a495439.js",
-    "static/css/831.98101251.chunk.css": "/static/css/831.98101251.chunk.css",
-    "static/js/831.5bfc2f49.chunk.js": "/static/js/831.5bfc2f49.chunk.js",
+    "main.css": "/static/css/main.a6408e1c.css",
+    "main.js": "/static/js/main.c6f84c3c.js",
+    "static/css/831.701e0ae8.chunk.css": "/static/css/831.701e0ae8.chunk.css",
+    "static/js/831.170f1579.chunk.js": "/static/js/831.170f1579.chunk.js",
     "static/css/446.6c275228.chunk.css": "/static/css/446.6c275228.chunk.css",
     "static/js/446.bd9a39ea.chunk.js": "/static/js/446.bd9a39ea.chunk.js",
     "static/css/77.ab527062.chunk.css": "/static/css/77.ab527062.chunk.css",
@@ -15,7 +15,6 @@
     "static/js/549.2a76124f.chunk.js": "/static/js/549.2a76124f.chunk.js",
     "static/js/787.a812566f.chunk.js": "/static/js/787.a812566f.chunk.js",
     "static/js/763.2e77db50.chunk.js": "/static/js/763.2e77db50.chunk.js",
-    "static/media/mainVideo.webm": "/static/media/mainVideo.0bc0c9b4e65ea6fd077c.webm",
     "static/media/marketvision_reina2.jpg": "/static/media/marketvision_reina2.6b9ff9deca05c9a54c26.jpg",
     "static/media/approach.jpg": "/static/media/approach.63c2bf3ed3855860774f.jpg",
     "static/media/marketvision_reina5.jpg": "/static/media/marketvision_reina5.ef7b2708db336736aeba.jpg",
@@ -41,7 +40,6 @@
     "static/media/marketvision_55charles1-1024x576.jpg": "/static/media/marketvision_55charles1-1024x576.d4963189ebb365359aee.jpg",
     "static/media/marketvision_88queen4.jpeg": "/static/media/marketvision_88queen4.954f04f23c61c0d2645f.jpeg",
     "static/media/Roman Films Logo.png": "/static/media/Roman Films Logo.9cc7bf8911d83e6e890e.png",
-    "static/media/poster.webp": "/static/media/poster.7086dc9932bf97a49131.webp",
     "static/media/Adidas Logo.png": "/static/media/Adidas Logo.4c34194abd682b884c15.png",
     "static/media/Bad Bunny Logo.png": "/static/media/Bad Bunny Logo.97224abcdde4b2444ddf.png",
     "static/media/Gucci Logo.png": "/static/media/Gucci Logo.eb74175591236a7393fe.png",
@@ -57,10 +55,10 @@
     "static/media/Apple Logo.png": "/static/media/Apple Logo.0ce2429c2958e87bdce9.png",
     "static/media/BBC Logo.png": "/static/media/BBC Logo.4ed7169c828ccb0d7aa7.png",
     "index.html": "/index.html",
-    "main.b817387e.css.map": "/static/css/main.b817387e.css.map",
-    "main.9a495439.js.map": "/static/js/main.9a495439.js.map",
-    "831.98101251.chunk.css.map": "/static/css/831.98101251.chunk.css.map",
-    "831.5bfc2f49.chunk.js.map": "/static/js/831.5bfc2f49.chunk.js.map",
+    "main.a6408e1c.css.map": "/static/css/main.a6408e1c.css.map",
+    "main.c6f84c3c.js.map": "/static/js/main.c6f84c3c.js.map",
+    "831.701e0ae8.chunk.css.map": "/static/css/831.701e0ae8.chunk.css.map",
+    "831.170f1579.chunk.js.map": "/static/js/831.170f1579.chunk.js.map",
     "446.6c275228.chunk.css.map": "/static/css/446.6c275228.chunk.css.map",
     "446.bd9a39ea.chunk.js.map": "/static/js/446.bd9a39ea.chunk.js.map",
     "77.ab527062.chunk.css.map": "/static/css/77.ab527062.chunk.css.map",
@@ -74,7 +72,7 @@
     "763.2e77db50.chunk.js.map": "/static/js/763.2e77db50.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.b817387e.css",
-    "static/js/main.9a495439.js"
+    "static/css/main.a6408e1c.css",
+    "static/js/main.c6f84c3c.js"
   ]
 }
