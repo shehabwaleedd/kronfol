@@ -16,7 +16,7 @@ function App() {
   const [navOpen, setNavOpen] = useState(false);
   const [dimension, setDimension] = useState({ width: 0, height: 0 });
   const landingRef = useRef(null); // Ref for the landing section
-  const logoRef = useRef(null); 
+  const logoRef = useRef(null);
   const isMobile = window.innerWidth < 1077;
 
   useEffect(() => {
@@ -77,73 +77,12 @@ function App() {
 
   }, [smallerDimension])
 
-  useEffect(() => {
-    gsap.registerPlugin(ScrollTrigger);
-
-    const updateAnimation = () => {
-
-      // Moved initialSettings outside the if block
-      const initialSettings = {
-        scale: 7,
-        y: isMobile ? "0" : "15vh",
-        x: "43vw",
-        position: 'fixed',
-        ease: "power2.out",
-        zIndex: 99,
-      };
-
-      if (location.pathname === "/" && !isMobile) {
-        gsap.set(logoRef.current, initialSettings);
-
-        const logoAnimation = gsap.to(logoRef.current, {
-          scale: 1,
-          top: "0",
-          x: 10,
-          y: 0,
-          ease: "power2.out",
-          zIndex: 99,
-          scrollTrigger: {
-            trigger: landingRef.current,
-            start: "top top",
-            end: "bottom center",
-            scrub: true,
-          },
-        });
-
-        return () => logoAnimation.kill();
-      } else {
-        // Ensure this set matches the initial state
-        gsap.set(logoRef.current, {
-          ...initialSettings,
-          scale: 1,
-          y: "0vh",
-          x: "1vw",
-          width: "100%",
-          position: 'relative',
-        });
-
-        return () => {
-          window.removeEventListener('resize', updateAnimation);
-          ScrollTrigger.getAll().forEach(trigger => trigger.kill());
-        };
-      }
-    };
-
-    updateAnimation();
-    window.addEventListener('resize', updateAnimation);
-
-    return () => {
-      window.removeEventListener('resize', updateAnimation);
-      ScrollTrigger.getAll().forEach(trigger => trigger.kill());
-    };
-  }, [isMobile, location.pathname]);
-
 
   return (
     <div className="App">
       <Navbar navOpen={navOpen} setNavOpen={setNavOpen} logoRef={logoRef} />
-      <Routes location={location} key={location.pathname}>
-        <Route path='/*' element={<Routers landingRef={landingRef} isMobile={isMobile} />} />
+      <Routes location={location} key={location.key}>
+        <Route path='/*' element={<Routers landingRef={landingRef} isMobile={isMobile} key={location.pathname} />} />
       </Routes>
       <Footer />
     </div>

@@ -12,16 +12,14 @@
     transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
     background-color: var(--background-color);
     z-index: 9999;
-
-    @media (max-width: 1077px) {
-        border-bottom: 1px solid var(--border-color);
-    }
-
+    border-bottom: 1px solid var(--border-color);
     .navbar__logo {
         display: flex;
         transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
         overflow: hidden;
-        
+        width: 100%;
+
+        padding-left: 2rem;
         &_anim {
             display: flex;
             width: 100%;
