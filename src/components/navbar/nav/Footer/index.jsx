@@ -44,7 +44,14 @@ export default function Footer() {
                     variants={translate} initial="initial"
                     animate="enter"
                     exit="exit">
-                    <span>Developed By </span> Cairo Studio
+                    <span>Designed & Developed By </span> <a style={{color: "var(--accent-color)"}} href="https://cairo-studio.com"  target='_blank' referrerPolicy='no-referrer' rel="noreferrer">Cairo Studio</a>
+                </motion.li>
+                <motion.li
+                    custom={[0.3, 0]}
+                    variants={translate} initial="initial"
+                    animate="enter"
+                    exit="exit">
+                    <span>Powered By </span> <a style={{color: "var(--accent-color)"}} href="https://weareelites.com" target='_blank' referrerPolicy='no-referrer' rel="noreferrer">Elite</a>
                 </motion.li>
             </ul>
         </div>

@@ -84,9 +84,9 @@ function App() {
 
       // Moved initialSettings outside the if block
       const initialSettings = {
-        scale: isMobile ? 1.8 : 7.8,
+        scale: 7,
         y: isMobile ? "0" : "15vh",
-        x: "45vw",
+        x: "43vw",
         position: 'fixed',
         ease: "power2.out",
         zIndex: 99,
@@ -98,7 +98,7 @@ function App() {
         const logoAnimation = gsap.to(logoRef.current, {
           scale: 1,
           top: "0",
-          x: 0,
+          x: 10,
           y: 0,
           ease: "power2.out",
           zIndex: 99,

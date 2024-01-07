@@ -11,7 +11,7 @@ const links = [
   },
   {
     title: "Approach",
-    href: "/projects",
+    href: "/approach",
   },
   {
     title: "Vision",
