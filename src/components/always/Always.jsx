@@ -3,6 +3,7 @@ import styles from "./style.module.scss"
 import { BsArrowRight } from "react-icons/bs";
 import { motion, useTransform, useScroll } from 'framer-motion';
 import { Link } from 'react-router-dom';
+import alwaysImage from "../../assets/always.jpg"
 
 const Always = () => {
     const imgRef = useRef(null);
@@ -15,6 +16,7 @@ const Always = () => {
 
     return (
         <motion.section className={styles.always}>
+            <img src={alwaysImage} alt="" style={{display: window.innerWidth < 1233 ? "none" : ""}}/>
             <div className={styles.always__container}>
                 <motion.div className={styles.always__container__left}>
                     <motion.img style={{ translateY }} className={styles.story__right_images__container__image_left} src={url} />
