@@ -1,4 +1,4 @@
-import React, { Suspense, lazy, useRef } from 'react';
+import React, { lazy, useRef } from 'react';
 import Routers from './routes/Routers';
 import { Route, Routes } from 'react-router-dom';
 import { useEffect, useState } from 'react';
@@ -16,7 +16,7 @@ function App() {
   const [navOpen, setNavOpen] = useState(false);
   const [dimension, setDimension] = useState({ width: 0, height: 0 });
   const landingRef = useRef(null); // Ref for the landing section
-  const logoRef = useRef(null); // Ref f
+  const logoRef = useRef(null); 
   const isMobile = window.innerWidth < 1077;
 
   useEffect(() => {
@@ -79,9 +79,9 @@ function App() {
 
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
-  
+
     const updateAnimation = () => {
-  
+
       // Moved initialSettings outside the if block
       const initialSettings = {
         scale: isMobile ? 1.8 : 7.8,
@@ -91,10 +91,10 @@ function App() {
         ease: "power2.out",
         zIndex: 99,
       };
-  
+
       if (location.pathname === "/" && !isMobile) {
         gsap.set(logoRef.current, initialSettings);
-  
+
         const logoAnimation = gsap.to(logoRef.current, {
           scale: 1,
           top: "0",
@@ -109,7 +109,7 @@ function App() {
             scrub: true,
           },
         });
-  
+
         return () => logoAnimation.kill();
       } else {
         // Ensure this set matches the initial state
@@ -117,33 +117,33 @@ function App() {
           ...initialSettings,
           scale: 1,
           y: "0vh",
-          x: "0vw",
+          x: "1vw",
           width: "100%",
           position: 'relative',
         });
-  
+
         return () => {
           window.removeEventListener('resize', updateAnimation);
           ScrollTrigger.getAll().forEach(trigger => trigger.kill());
         };
       }
     };
-  
+
     updateAnimation();
     window.addEventListener('resize', updateAnimation);
-  
+
     return () => {
       window.removeEventListener('resize', updateAnimation);
       ScrollTrigger.getAll().forEach(trigger => trigger.kill());
     };
   }, [isMobile, location.pathname]);
-  
+
 
   return (
     <div className="App">
       <Navbar navOpen={navOpen} setNavOpen={setNavOpen} logoRef={logoRef} />
       <Routes location={location} key={location.pathname}>
-        <Route path='/*' element={<Routers landingRef={landingRef} isMobile={isMobile}/>} />
+        <Route path='/*' element={<Routers landingRef={landingRef} isMobile={isMobile} />} />
       </Routes>
       <Footer />
     </div>
