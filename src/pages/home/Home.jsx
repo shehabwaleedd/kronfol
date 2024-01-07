@@ -6,10 +6,10 @@ import OurProjects from '../../components/ourProjects/OurProjects'
 import Always from '../../components/always/Always'
 import Statemenet from '../../components/statement/Statemenet'
 
-const Home = ({ landingRef }) => {
+const Home = ({ landingRef, isMobile }) => {
     return (
         <main>
-            <Landing landingRef={ landingRef } />
+            <Landing landingRef={ landingRef } isMobile={isMobile}/>
             <Story />
             <Who />
             <OurProjects />

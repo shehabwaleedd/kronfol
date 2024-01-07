@@ -11,7 +11,7 @@ export default function Body({ links }) {
             <div className={styles.visitUs}>
                 <h2>Visit Us</h2>
                 <p>Monday - Friday: 9am - 5pm</p>
-                <p>Sursock Tower, Ashrafieh ✹ Beirut, Lebanon</p>
+                <p>80 Rue du Liban, Beirut, Lebanon</p>
             </div>
             <div className={styles.social}>
                 <h2>Social</h2>

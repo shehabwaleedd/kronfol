@@ -7,9 +7,9 @@ const Vision = lazy(() => import('../pages/vision/Vision'));
 const Approach = lazy(() => import('../pages/approach/Approach'));
 const NotFound = lazy(() => import('../pages/notFound/NotFound'));
 
-const Routers = ({ landingRef }) => {
+const Routers = ({ landingRef, isMobile }) => {
     const routeConfig = [
-        { path: '/', element: <Home landingRef={landingRef} /> },
+        { path: '/', element: <Home landingRef={landingRef} isMobile={isMobile}/> },
         { path: '/projects', element: <Projects /> },
         { path: '/projects/:title', element: <ProjectDetails /> },
         { path: '/vision', element: <Vision /> },

@@ -11,16 +11,17 @@
     overflow: hidden;
     transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
     background-color: var(--background-color);
-    border-bottom: 1px solid var(--header-color);
     z-index: 99;
 
-    &__logo {
+    .navbar__logo {
         display: flex;
         transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
         overflow: hidden;
+        
         &_anim {
             display: flex;
             width: 100%;
+            
             h2 {
                 font-family: var(--logo-font) ;
                 font-size: 5vh;
@@ -32,6 +33,8 @@
 
         }
     }
+
+
 
     &__links {
         display: flex;
@@ -108,4 +111,6 @@
             color: var(--text-color);
         }
     }
+    
+
 }

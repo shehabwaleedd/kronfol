@@ -1,44 +1,92 @@
-import React, { useRef } from 'react';
-import styles from "./style.module.scss"
-import mainVideo from "../../assets/mainVideo.webm"
-import posterImage from "../../assets/poster.webp"
-import { motion, useScroll, useTransform } from 'framer-motion';
+import React, { useState } from 'react';
+import styles from "./style.module.scss";
+import Data from '../ourProjects/Data';
+import { AnimatePresence, motion } from 'framer-motion';
+import { useNavigate } from 'react-router-dom';
+import leftCursor from "../../assets/left-arrow.png"
+import rightCursor from "../../assets/right-arrow (1).png"
 
-const Landing = ({ landingRef }) => {
-    const background = useRef(null);
+const Landing = ({ landingRef, isMobile }) => {
+    const navigate = useNavigate();
+    const [currentProjectIndex, setCurrentProjectIndex] = useState(0);
+    const displayedProjects = Data.slice(0, 2);
 
-    // Use the useScroll hook to get the scroll progress
-    const { scrollYProgress } = useScroll({
-        target: background,
-        offset: ["start end", "end end"]
-    });
+    const handleMouseMove = (event) => {
+        const rect = event.currentTarget.getBoundingClientRect();
+        const posX = event.clientX - rect.left;
 
-    // Transform the scroll progress into a clipPath value
-    const clipPath = useTransform(
-        scrollYProgress,
-        [0, 1],
-        [`inset(5%)`, `inset(0%)`]
-    );
+        if (posX < rect.width / 2) {
+            event.currentTarget.style.cursor = `url(${leftCursor}), auto`;
+        } else {
+            event.currentTarget.style.cursor = `url(${rightCursor}), auto`;
+        }
+    };
+
+    const handleMouseLeave = (event) => {
+        event.currentTarget.style.cursor = 'default';
+    };
+
+    const handleImageClick = (event) => {
+        const rect = event.currentTarget.getBoundingClientRect();
+        const clickPosition = event.clientX - rect.left;
+
+        if (clickPosition < rect.width / 2) {
+            handlePrev();
+        } else {
+            handleNext();
+        }
+    };
+
+    const handleNext = () => {
+        setCurrentProjectIndex((prevIndex) => (prevIndex + 1) % displayedProjects.length);
+    };
+
+    const handlePrev = () => {
+        setCurrentProjectIndex((prevIndex) => (prevIndex - 1 + displayedProjects.length) % displayedProjects.length);
+    };
+
+    const variants = {
+        enter: { opacity: 0 },
+        center: { opacity: 1 },
+        exit: { opacity: 0 },
+    };
 
     return (
         <section className={styles.landing} ref={landingRef}>
-            <div className={styles.landing__top}>
-                <div className={styles.landing__top_bottom}>
-                    <span> Luxrious Homes for Exclusive Tastes <br /> In Lebanon </span>
-                    <span>Sursock Tower, Ashrafieh ✹ Beirut, Lebanon</span>
-                </div>
-            </div>
-            <motion.div className={styles.landingBottom} ref={background}>
-                <motion.video
-                    style={{ clipPath }}
-                    autoPlay
-                    playsInline
-                    loop muted poster={posterImage} loading="lazy">
-                    <source src={mainVideo} type="video/webm" />
-                </motion.video>
-            </motion.div>
+            <AnimatePresence mode='wait'>
+                <motion.div
+                    key={currentProjectIndex}
+                    className={styles.projectCard}
+                    variants={variants}
+                    initial="enter"
+                    animate="center"
+                    exit="exit"
+                    transition={{ duration: 0.1, ease: [0.42, 0, 0.58, 1] }}
+                    onClick={handleImageClick}
+                    onMouseMove={handleMouseMove}
+                    onMouseLeave={handleMouseLeave}
+                >
+                    <img
+                        src={displayedProjects[currentProjectIndex].projectImage}
+                        alt={displayedProjects[currentProjectIndex].projectName}
+                        className={styles.projectImage}
+                    />
+                    <div className={styles.projectCard_details}>
+                        <h3>{displayedProjects[currentProjectIndex].projectName}</h3>
+                        <span style={{ display: isMobile ? 'none' : 'block' }}>
+                            {currentProjectIndex + 1} / {displayedProjects.length + 1}
+                        </span>
+                        <span style={{ display: isMobile ? 'none' : 'block' }}>
+                            {displayedProjects[currentProjectIndex].status[0]}
+                        </span>
+                        <button onClick={() => navigate(`/projects/${displayedProjects[currentProjectIndex].projectName}`)}>
+                            Learn More
+                        </button>
+                    </div>
+                </motion.div>
+            </AnimatePresence>
         </section>
-    )
+    );
 }
 
-export default Landing
+export default Landing;

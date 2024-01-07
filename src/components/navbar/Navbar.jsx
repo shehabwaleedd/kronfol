@@ -32,7 +32,7 @@ const Navbar = ({ setNavOpen, navOpen, logoRef }) => {
                     transition={{ ease: "easeOut" }}>
                     <Link ref={logoRef} className={styles.navbar__logo} to="/">
                         <div className={styles.navbar__logo_anim}>
-                            {getChars('KRONFOL')}
+                            {getChars('Kronfol')}
                         </div>
                     </Link>
                     <div className={styles.navbar__links}>

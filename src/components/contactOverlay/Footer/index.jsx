@@ -20,7 +20,7 @@ export default function Footer() {
                     variants={translate} initial="initial"
                     animate="enter"
                     exit="exit">
-                    <span>Location: </span> Beirut, Lebanon
+                    <span>Location: </span> 80 Rue du Liban, Beirut, Lebanon
                 </motion.li>
                 <motion.li
                     custom={[0.3, 0]}
