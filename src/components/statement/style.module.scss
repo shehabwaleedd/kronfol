@@ -17,15 +17,15 @@
         letter-spacing: -0.05rem;
         font-weight: 300;
         width: 60%;
-        color: var(--header-color);
+        color: var(--text-color);
         transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
         line-height: 1;
         font-display: swap;
         overflow: hidden;
 
-        @media (max-width: 777px) {
+        @media (max-width: 1077px) {
             width: 100%;
-            font-size: var(--big-font-size);
+            font-size: var(--body-font-size);
             font-weight: 300;
         }
     }

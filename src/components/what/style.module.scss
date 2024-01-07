@@ -57,10 +57,10 @@
             user-select: none;
             font-display: swap;
 
-            @media (max-width: 777px) {
+            @media (max-width: 1077px) {
                 width: 100%;
-                font-size: var(--normal-font-size);
-                font-weight: 100;
+                font-size: var(--body-font-size);
+                font-weight: 300;
             }
         }
     }

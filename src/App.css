@@ -135,6 +135,14 @@ img {
   height: auto;
 }
 
+.paragraph {
+  @media (max-width: 1077px) {
+    width: 100%;
+    font-size: var(--body-font-size);
+    font-weight: 300;
+  }
+}
+
 
 
 
