@@ -18,8 +18,10 @@
         transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
         overflow: hidden;
         width: 100%;
-
         padding-left: 2rem;
+        @media (max-width: 1268px) {
+            padding-left: 0.5rem;
+        }
         &_anim {
             display: flex;
             width: 100%;

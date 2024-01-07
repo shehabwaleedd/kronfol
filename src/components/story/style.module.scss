@@ -7,6 +7,7 @@
     height: 100%;
     margin-top: 5rem;
     margin-bottom: 5rem;
+    overflow: hidden;
 
     @media (max-width: 1277px) {
         grid-template-columns: 1fr;
