@@ -45,7 +45,12 @@ const Story = () => {
                 <h2><span>/</span> Our Story</h2>
             </div>
             <div className={styles.story__right}>
-                <p>Founded in 1995, Kronfol is a leading real estate agency in Beirut, Lebanon. Our team of experts are dedicated to finding the perfect property to suit your needs. Whether you are looking for a new home, an investment opportunity, or a short-term rental. Kronfol is here to help you find your dream property.</p>
+                {isDesktop ? (
+                    <p>Founded in 1995, Kronfol is a leading real estate agency in Beirut, Lebanon. Our team of experts are dedicated to finding the perfect property to suit your needs. Whether you are looking for a new home, an investment opportunity, or a short-term rental. Kronfol is here to help you find your dream property.</p>
+
+                ) : (
+                    <span>Founded in 1995, Kronfol is a leading real estate agency in Beirut, Lebanon. Our team of experts are dedicated to finding the perfect property to suit your needs. Whether you are looking for a new home, an investment opportunity, or a short-term rental. Kronfol is here to help you find your dream property.</span>
+                )}
                 <div className={styles.story__right_images}>
                     {isDesktop ? (
                         <div className={styles.story__right_images__container}>
