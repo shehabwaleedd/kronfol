@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.css": "/static/css/main.a6408e1c.css",
-    "main.js": "/static/js/main.c6f84c3c.js",
-    "static/css/831.701e0ae8.chunk.css": "/static/css/831.701e0ae8.chunk.css",
+    "main.css": "/static/css/main.0830b56b.css",
+    "main.js": "/static/js/main.83320681.js",
+    "static/css/831.05ca9253.chunk.css": "/static/css/831.05ca9253.chunk.css",
     "static/js/831.170f1579.chunk.js": "/static/js/831.170f1579.chunk.js",
     "static/css/446.6c275228.chunk.css": "/static/css/446.6c275228.chunk.css",
     "static/js/446.bd9a39ea.chunk.js": "/static/js/446.bd9a39ea.chunk.js",
@@ -55,9 +55,9 @@
     "static/media/Apple Logo.png": "/static/media/Apple Logo.0ce2429c2958e87bdce9.png",
     "static/media/BBC Logo.png": "/static/media/BBC Logo.4ed7169c828ccb0d7aa7.png",
     "index.html": "/index.html",
-    "main.a6408e1c.css.map": "/static/css/main.a6408e1c.css.map",
-    "main.c6f84c3c.js.map": "/static/js/main.c6f84c3c.js.map",
-    "831.701e0ae8.chunk.css.map": "/static/css/831.701e0ae8.chunk.css.map",
+    "main.0830b56b.css.map": "/static/css/main.0830b56b.css.map",
+    "main.83320681.js.map": "/static/js/main.83320681.js.map",
+    "831.05ca9253.chunk.css.map": "/static/css/831.05ca9253.chunk.css.map",
     "831.170f1579.chunk.js.map": "/static/js/831.170f1579.chunk.js.map",
     "446.6c275228.chunk.css.map": "/static/css/446.6c275228.chunk.css.map",
     "446.bd9a39ea.chunk.js.map": "/static/js/446.bd9a39ea.chunk.js.map",
@@ -72,7 +72,7 @@
     "763.2e77db50.chunk.js.map": "/static/js/763.2e77db50.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.a6408e1c.css",
-    "static/js/main.c6f84c3c.js"
+    "static/css/main.0830b56b.css",
+    "static/js/main.83320681.js"
   ]
 }
